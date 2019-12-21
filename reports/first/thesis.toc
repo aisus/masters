@@ -1,16 +1,15 @@
 \babel@toc {russian}{}
 \contentsline {section}{Введение}{5}{section*.2}% 
-\contentsline {section}{\numberline {1}Обзор задачи}{6}{section.1}% 
-\contentsline {subsection}{\numberline {1.1}Общие сведения о дескрипторах изображений}{6}{subsection.1.1}% 
-\contentsline {subsection}{\numberline {1.2}Методы поиска опорных точек}{7}{subsection.1.2}% 
-\contentsline {subsection}{\numberline {1.3}Пространственные преобразования изображений}{11}{subsection.1.3}% 
-\contentsline {section}{\numberline {2}Модели цифровых шумов в обработке изображений}{16}{section.2}% 
-\contentsline {section}{\numberline {3}Экспериментальное исследование}{21}{section.3}% 
-\contentsline {subsection}{\numberline {3.1}Реализация алгоритма сшивки}{21}{subsection.3.1}% 
-\contentsline {subsection}{3.2\hskip 2em\relax Экспериментальная оценка влияния цифровых шумов на качество работы алгоритма}{24}{lstnumber.-4.3}% 
-\contentsline {subsubsection}{\numberline {3.1.1} Сравнение работы алгоритмов при применении размытия }{25}{subsubsection.3.1.1}% 
-\contentsline {subsubsection}{\numberline {3.1.2} Сравнение работы алгоритмов при применении случайных шумов }{30}{subsubsection.3.1.2}% 
-\contentsline {section}{\numberline {4}Анализ полученных результатов}{33}{section.4}% 
-\contentsline {section}{Заключение}{39}{section*.27}% 
-\contentsline {section}{Список использованных источников}{40}{section*.28}% 
-\contentsline {section}{Приложение А Код программы}{42}{section*.29}% 
+\contentsline {section}{\numberline {1}Исследование алгоритмов построения дескрипторов изображений}{6}{section.1}% 
+\contentsline {subsection}{\numberline {1.1}Постановка задачи}{6}{subsection.1.1}% 
+\contentsline {subsection}{\numberline {1.2}Существующие алгоритмы построения дескрипторов}{8}{subsection.1.2}% 
+\contentsline {section}{\numberline {2}Разработка алгоритма построения дескрипторов изображений}{9}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Алгоритм построения дескрипторов}{9}{subsection.2.1}% 
+\contentsline {subsection}{\numberline {2.2}Программная реализация}{12}{subsection.2.2}% 
+\contentsline {subsection}{3.2\hskip 2em\relax Экспериментальная оценка влияния цифровых шумов на качество работы алгоритма}{14}{lstnumber.-4.3}% 
+\contentsline {subsubsection}{\numberline {2.2.1} Сравнение работы алгоритмов при применении размытия }{15}{subsubsection.2.2.1}% 
+\contentsline {subsubsection}{\numberline {2.2.2} Сравнение работы алгоритмов при применении случайных шумов }{20}{subsubsection.2.2.2}% 
+\contentsline {section}{\numberline {3}Анализ полученных результатов}{23}{section.3}% 
+\contentsline {section}{Заключение}{29}{section*.16}% 
+\contentsline {section}{Список использованных источников}{30}{section*.17}% 
+\contentsline {section}{Приложение А Код программы}{32}{section*.18}% 
