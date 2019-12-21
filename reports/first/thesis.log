@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Arch Linux)  (format=lualatex 2019.12.21)  21 DEC 2019 15:38
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Arch Linux)  (format=lualatex 2019.12.21)  21 DEC 2019 17:45
  restricted system commands enabled.
 **thesis.tex
 (./thesis.tex
@@ -55,7 +55,7 @@ Lua module: luaotfload-multiscript 2019-09-13 3.00 luaotfload submodule / multis
 cript
 Inserting `luaotfload.rewrite_fontname' at position 5 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.150 seconds
+luaotfload | main : initialization completed in 0.129 seconds
 (/usr/share/texmf-dist/tex/latex/extsizes/extarticle.cls
 Document Class: extarticle 1996/10/08 v1.0 Non Standard LaTeX document class
 (/usr/share/texmf-dist/tex/latex/base/fleqn.clo
@@ -1204,17 +1204,6 @@ LaTeX Info: Redefining \nameref on input line 235.
 
 \openout3 = thesis.out
 
-Underfull \hbox (badness 10000) in paragraph at lines 257--258
-
- []
-
-
-Overfull \hbox (2.90036pt too wide) in paragraph at lines 259--260
-\TU/TimesNewRoman(0)/m/it/14.4 ПРО-ЕК-ТИВ-НЫЕ ПРЕ-ОБ-РА-ЗО-
-ВА-НИЯ, ЦИФ-РО-ВЫЕ ШУ-МЫ, SIFT, SURF,
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 259--260
 
  []
@@ -1236,227 +1225,235 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 \openout4 = thesis.toc
  [4]
-Overfull \hbox (7.54115pt too wide) in paragraph at lines 281--282
-\TU/TimesNewRoman(0)/m/n/14.4 став-ле-ны в циф-ро-вом ви-д
-е. Для ра-бо-ты с ни-ми при-ме-ня-ет-ся ши-ро-к
-ий спектр
+Overfull \hbox (3.36153pt too wide) in paragraph at lines 285--286
+[]\TU/TimesNewRoman(0)/m/n/14.4 Ос-нов-ны-ми тре-бо-ва-ни-я-
+ми к де-скрип-то-ру яв-ля-ют-ся од-но-знач-но
+сть ре-
  []
 
-[5] [6]
-Overfull \hbox (0.67851pt too wide) in paragraph at lines 320--325
+[5]
+Overfull \hbox (1.98114pt too wide) in paragraph at lines 311--312
+[]\TU/TimesNewRoman(0)/m/n/14.4 Как пра-ви-ло, де-скрип-то
+р пред-став-ля-ет со-бой век-тор-ное зна-че-н
+ие, вы-
+ []
+
+
+Overfull \hbox (0.67851pt too wide) in paragraph at lines 316--321
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 320--325
+Underfull \hbox (badness 10000) in paragraph at lines 316--321
 
  []
 
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 336--342
+
+Underfull \hbox (badness 10000) in paragraph at lines 330--335
 
  []
 
-[8]
-Overfull \hbox (2.54005pt too wide) in paragraph at lines 355--358
+[6]
+Overfull \hbox (2.54005pt too wide) in paragraph at lines 348--351
 []\TU/TimesNewRoman(0)/m/n/14.4 В дан-ной ра-бо-те ос-нов-н
 ое вни-ма-ние уде-ля-ет-ся ис-ка-же-ни-ям про-
 стран-
  []
 
 
-Overfull \hbox (2.7739pt too wide) in paragraph at lines 355--358
+Overfull \hbox (2.7739pt too wide) in paragraph at lines 348--351
 \TU/TimesNewRoman(0)/m/n/14.4 ствен-но-го пре-об-ра-зо-ва-
 ния, вы-зван-ны-ми циф-ро-вы-ми шу-ма-ми, по-э
 то-му пре-
  []
 
 
-Overfull \hbox (1.17671pt too wide) in paragraph at lines 359--362
+Overfull \hbox (1.17671pt too wide) in paragraph at lines 352--355
 \TU/TimesNewRoman(0)/m/n/14.4 щий од-но-знач-но его ха-ра
 к-те-ри-зо-вать. Как пра-ви-ло, это об-ла-сти 
 уг-лов круп-
  []
 
-<images/keypoints/dam.jpg, id=116, 316.18124pt x 326.72063pt>
+[7]
+<images/keypoints/dam.jpg, id=117, 316.18124pt x 326.72063pt>
 File: images/keypoints/dam.jpg Graphic file (type jpg)
 <use images/keypoints/dam.jpg>
-Package luatex.def Info: images/keypoints/dam.jpg  used on input line 365.
+Package luatex.def Info: images/keypoints/dam.jpg  used on input line 358.
 (luatex.def)             Requested size: 204.85922pt x 204.85794pt.
-<images/keypoints/roads.jpg, id=117, 385.44pt x 382.42876pt>
+<images/keypoints/roads.jpg, id=118, 385.44pt x 382.42876pt>
 File: images/keypoints/roads.jpg Graphic file (type jpg)
 <use images/keypoints/roads.jpg>
-Package luatex.def Info: images/keypoints/roads.jpg  used on input line 366.
+Package luatex.def Info: images/keypoints/roads.jpg  used on input line 359.
 (luatex.def)             Requested size: 204.85846pt x 203.25813pt.
-[9]
-Overfull \hbox (4.41914pt too wide) in paragraph at lines 371--373
+
+Overfull \hbox (4.41914pt too wide) in paragraph at lines 364--366
 \TU/TimesNewRoman(0)/m/n/14.4 за-ции ко-то-рых при-сут-ст
 ву-ют в биб-лио-те-ке ком-пью-тер-но-го зре-н
 ия OpenCV. 
  []
 
-[10<./images/keypoints/dam.jpg><./images/keypoints/roads.jpg>]
-<images/descriptors/sift.jpg, id=133, 770.88pt x 468.24937pt>
+[8<./images/keypoints/dam.jpg><./images/keypoints/roads.jpg>]
+<images/descriptors/sift.jpg, id=125, 770.88pt x 468.24937pt>
 File: images/descriptors/sift.jpg Graphic file (type jpg)
 <use images/descriptors/sift.jpg>
-Package luatex.def Info: images/descriptors/sift.jpg  used on input line 381.
+Package luatex.def Info: images/descriptors/sift.jpg  used on input line 374.
 (luatex.def)             Requested size: 227.62206pt x 138.26097pt.
 
-Overfull \hbox (2.49033pt too wide) in paragraph at lines 388--389
+Overfull \hbox (2.49033pt too wide) in paragraph at lines 381--382
 \TU/TimesNewRoman(0)/m/n/14.4 за-ции па-рал-лель-ных вы-ч
 ис-ле-ний. SURF ис-поль-зу-ет де-тек-тор BLOB (Binary
  []
 
 
-Overfull \hbox (6.91977pt too wide) in paragraph at lines 388--389
+Overfull \hbox (6.91977pt too wide) in paragraph at lines 381--382
 \TU/TimesNewRoman(0)/m/n/14.4 стро-е-ние де-скрип-то-ров 
 ос-но-вы-ва-ет-ся на вейвлет-образах (wavelet respo
 nses)
  []
 
-<images/descriptors/surf.jpg, id=135, 770.88pt x 468.24937pt>
+[9<./images/descriptors/sift.jpg>]
+<images/descriptors/surf.jpg, id=134, 770.88pt x 468.24937pt>
 File: images/descriptors/surf.jpg Graphic file (type jpg)
 <use images/descriptors/surf.jpg>
-Package luatex.def Info: images/descriptors/surf.jpg  used on input line 392.
+Package luatex.def Info: images/descriptors/surf.jpg  used on input line 385.
 (luatex.def)             Requested size: 227.62206pt x 138.26097pt.
-[11<./images/descriptors/sift.jpg><./images/descriptors/surf.jpg>]
-<images/descriptors/orb.jpg, id=145, 770.88pt x 468.24937pt>
+<images/descriptors/orb.jpg, id=136, 770.88pt x 468.24937pt>
 File: images/descriptors/orb.jpg Graphic file (type jpg)
 <use images/descriptors/orb.jpg>
-Package luatex.def Info: images/descriptors/orb.jpg  used on input line 403.
+Package luatex.def Info: images/descriptors/orb.jpg  used on input line 396.
 (luatex.def)             Requested size: 227.62206pt x 138.26097pt.
-
-Overfull \hbox (4.71385pt too wide) in paragraph at lines 411--412
+ [10<./images/descriptors/surf.jpg>]
+Overfull \hbox (4.71385pt too wide) in paragraph at lines 404--405
 []\TU/TimesNewRoman(0)/m/n/14.4 Для ра-бо-ты с изоб-ра-же-н
 и-я-ми из су-ще-ству-ю-щих ви-дов про-стран-с
 твен-
  []
 
 
-Overfull \hbox (1.33018pt too wide) in paragraph at lines 413--414
+Overfull \hbox (1.33018pt too wide) in paragraph at lines 406--407
 \TU/TimesNewRoman(0)/m/n/14.4 об-щим слу-ча-ем про-стран-
 ствен-ных пре-об-ра-зо-ва-ний [[][]4[][]]. Прак-ти-
 че-скую цен-
  []
 
 
-Overfull \hbox (9.80278pt too wide) in paragraph at lines 413--414
+Overfull \hbox (9.80278pt too wide) in paragraph at lines 406--407
 \TU/TimesNewRoman(0)/m/n/14.4 на фо-то-гра-фи-ях, воз-ни-к
 а-ю-щим, ес-ли сни-ма-е-мые объ-ек-ты на-хо-дя
 т-ся не плос-
  []
 
-[12<./images/descriptors/orb.jpg>]
-Overfull \hbox (12.6123pt too wide) in paragraph at lines 415--416
+
+Overfull \hbox (12.6123pt too wide) in paragraph at lines 408--409
 []\TU/TimesNewRoman(0)/m/n/14.4 Про-ек-тив-ные пре-об-ра-з
 о-ва-ния отоб-ра-жа-ют про-ек-цию дву-мер-но-
 го изоб-
  []
 
+[11<./images/descriptors/orb.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 419--421
 
-Underfull \hbox (badness 10000) in paragraph at lines 426--428
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 433--434
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 440--441
-
- []
-
-[13]
-Overfull \hbox (5.41006pt too wide) in paragraph at lines 443--444
+Overfull \hbox (5.41006pt too wide) in paragraph at lines 436--437
 []\TU/TimesNewRoman(0)/m/n/14.4 В со-от-вет-ствии с пра-ви-
 ла-ми мат-рич-но-го умно-же-ния, ко-ор-ди-на-т
 ы пик-
  []
 
 
-Overfull \hbox (3.51277pt too wide) in paragraph at lines 449--450
+Overfull \hbox (3.51277pt too wide) in paragraph at lines 442--443
 []\TU/TimesNewRoman(0)/m/n/14.4 От-ме-тим, что ис-поль-зо-в
 а-ние в ка-че-стве мат-ри-цы пре-об-ра-зо-ва-н
 ия еди-
  []
 
 
-Overfull \hbox (8.61227pt too wide) in paragraph at lines 449--450
+Overfull \hbox (8.61227pt too wide) in paragraph at lines 442--443
 \TU/TimesNewRoman(0)/m/n/14.4 ме-не-ний. На ри-сун-ке [][]5[][]
  при-ве-ден при-мер про-ек-тив-ных пре-об-ра-
 зо-ва-ний изоб-
  []
 
-<images/transforms/projection.jpg, id=163, 540.51938pt x 671.50874pt>
+<images/transforms/projection.jpg, id=155, 540.51938pt x 671.50874pt>
 File: images/transforms/projection.jpg Graphic file (type jpg)
 <use images/transforms/projection.jpg>
-Package luatex.def Info: images/transforms/projection.jpg  used on input line 45
-3.
+Package luatex.def Info: images/transforms/projection.jpg  used on input line 44
+6.
 (luatex.def)             Requested size: 182.09486pt x 226.21968pt.
-[14<./images/transforms/projection.jpg>]
-Overfull \hbox (2.89514pt too wide) in paragraph at lines 489--497
+[12] [13<./images/transforms/projection.jpg>]
+Overfull \hbox (2.89514pt too wide) in paragraph at lines 482--490
 []\TU/TimesNewRoman(0)/m/n/14.4 Рас-смот-рим на-хож-де-ние 
 про-стран-ствен-но-го пре-об-ра-зо-ва-ния по 
 опор-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 514--525
+Underfull \hbox (badness 10000) in paragraph at lines 507--518
 
  []
 
-[15]
-Overfull \hbox (1.37872pt too wide) in paragraph at lines 548--552
+[14]
+Overfull \hbox (1.37872pt too wide) in paragraph at lines 541--545
 []\TU/TimesNewRoman(0)/m/n/14.4 Вы-чис-лен-ный на-бор ко-э
 ф-фи-ци-ен-тов под-став-ля-ет-ся в вы-ра-же-ни
 е пре-
  []
 
-[16]
-Overfull \hbox (2.92917pt too wide) in paragraph at lines 556--558
+[15]
+Overfull \hbox (2.92917pt too wide) in paragraph at lines 549--551
 []\TU/TimesNewRoman(0)/m/n/14.4 Циф-ро-вым шу-мом изоб-ра-
 же-ния на-зы-ва-ют де-фек-ты, вно-си-мые в изо
 б-
  []
 
 
-Overfull \hbox (1.83327pt too wide) in paragraph at lines 562--563
+Overfull \hbox (1.83327pt too wide) in paragraph at lines 555--556
 []\TU/TimesNewRoman(0)/m/n/14.4 Муль-ти-пли-ка-тив-ные -- з
 на-че-ние шу-ма умно-жа-ет-ся на зна-че-ние с
 иг-
  []
 
 
-Overfull \hbox (15.89246pt too wide) in paragraph at lines 566--567
+Overfull \hbox (15.89246pt too wide) in paragraph at lines 559--560
 []\TU/TimesNewRoman(0)/m/n/14.4 Рас-смот-рим несколь-ко м
 а-те-ма-ти-че-ских мо-де-лей циф-ро-во-го шу-м
 а, стан-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 566--567
+Underfull \hbox (badness 10000) in paragraph at lines 559--560
 
  []
 
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 570--577
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 563--570
 
  []
 
-<images/noises/original.jpg, id=192, 192.72pt x 191.21437pt>
+<images/noises/original.jpg, id=191, 192.72pt x 191.21437pt>
 File: images/noises/original.jpg Graphic file (type jpg)
 <use images/noises/original.jpg>
-Package luatex.def Info: images/noises/original.jpg  used on input line 582.
+Package luatex.def Info: images/noises/original.jpg  used on input line 575.
 (luatex.def)             Requested size: 159.33821pt x 158.09224pt.
-<images/noises/gauss.jpg, id=193, 192.72pt x 191.21437pt>
+<images/noises/gauss.jpg, id=192, 192.72pt x 191.21437pt>
 File: images/noises/gauss.jpg Graphic file (type jpg)
 <use images/noises/gauss.jpg>
-Package luatex.def Info: images/noises/gauss.jpg  used on input line 583.
+Package luatex.def Info: images/noises/gauss.jpg  used on input line 576.
 (luatex.def)             Requested size: 159.33821pt x 158.09224pt.
-<images/noises/gauss_big.jpg, id=194, 128.73094pt x 108.405pt>
+<images/noises/gauss_big.jpg, id=193, 128.73094pt x 108.405pt>
 File: images/noises/gauss_big.jpg Graphic file (type jpg)
 <use images/noises/gauss_big.jpg>
-Package luatex.def Info: images/noises/gauss_big.jpg  used on input line 590.
+Package luatex.def Info: images/noises/gauss_big.jpg  used on input line 583.
 (luatex.def)             Requested size: 159.33821pt x 134.19087pt.
-[18<./images/noises/original.jpg><./images/noises/gauss.jpg>]
-Overfull \hbox (2.50848pt too wide) in paragraph at lines 595--596
+[17<./images/noises/original.jpg><./images/noises/gauss.jpg>]
+Overfull \hbox (2.50848pt too wide) in paragraph at lines 588--589
 []\TU/TimesNewRoman(0)/bx/n/14.4 Шум соль-перец \TU/TimesNewRoman(0
 )/m/n/14.4 -- слу-чай-ный им-пульс-ный шум c неза-в
 и-си-мы-ми зна-
@@ -1464,54 +1461,54 @@ Overfull \hbox (2.50848pt too wide) in paragraph at lines 595--596
 
 File: images/noises/original.jpg Graphic file (type jpg)
 <use images/noises/original.jpg>
-Package luatex.def Info: images/noises/original.jpg  used on input line 599.
+Package luatex.def Info: images/noises/original.jpg  used on input line 592.
 (luatex.def)             Requested size: 159.33821pt x 158.09224pt.
-<images/noises/sp.jpg, id=204, 192.72pt x 191.21437pt>
+<images/noises/sp.jpg, id=203, 192.72pt x 191.21437pt>
 File: images/noises/sp.jpg Graphic file (type jpg)
 <use images/noises/sp.jpg>
-Package luatex.def Info: images/noises/sp.jpg  used on input line 600.
+Package luatex.def Info: images/noises/sp.jpg  used on input line 593.
 (luatex.def)             Requested size: 159.33821pt x 158.09224pt.
-<images/noises/sp_big.jpg, id=205, 127.22531pt x 107.65219pt>
+<images/noises/sp_big.jpg, id=204, 127.22531pt x 107.65219pt>
 File: images/noises/sp_big.jpg Graphic file (type jpg)
 <use images/noises/sp_big.jpg>
-Package luatex.def Info: images/noises/sp_big.jpg  used on input line 607.
+Package luatex.def Info: images/noises/sp_big.jpg  used on input line 600.
 (luatex.def)             Requested size: 159.33821pt x 134.831pt.
-[19<./images/noises/gauss_big.jpg><./images/noises/sp.jpg><./images/noises/sp_bi
+[18<./images/noises/gauss_big.jpg><./images/noises/sp.jpg><./images/noises/sp_bi
 g.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 623--629
+Underfull \hbox (badness 10000) in paragraph at lines 616--622
 
  []
 
 File: images/noises/original.jpg Graphic file (type jpg)
 <use images/noises/original.jpg>
-Package luatex.def Info: images/noises/original.jpg  used on input line 633.
+Package luatex.def Info: images/noises/original.jpg  used on input line 626.
 (luatex.def)             Requested size: 159.33821pt x 158.09224pt.
-<images/noises/blur.jpg, id=215, 192.72pt x 191.21437pt>
+<images/noises/blur.jpg, id=214, 192.72pt x 191.21437pt>
 File: images/noises/blur.jpg Graphic file (type jpg)
 <use images/noises/blur.jpg>
-Package luatex.def Info: images/noises/blur.jpg  used on input line 634.
+Package luatex.def Info: images/noises/blur.jpg  used on input line 627.
 (luatex.def)             Requested size: 159.33821pt x 158.09224pt.
-<images/noises/blur_big.jpg, id=216, 130.23656pt x 103.13531pt>
+<images/noises/blur_big.jpg, id=215, 130.23656pt x 103.13531pt>
 File: images/noises/blur_big.jpg Graphic file (type jpg)
 <use images/noises/blur_big.jpg>
-Package luatex.def Info: images/noises/blur_big.jpg  used on input line 640.
+Package luatex.def Info: images/noises/blur_big.jpg  used on input line 633.
 (luatex.def)             Requested size: 159.33821pt x 126.1821pt.
-[20<./images/noises/blur.jpg>]
-Overfull \hbox (0.61067pt too wide) in paragraph at lines 646--648
+[19<./images/noises/blur.jpg>]
+Overfull \hbox (0.61067pt too wide) in paragraph at lines 639--641
 \TU/TimesNewRoman(0)/m/n/14.4 де-ля-ют-ся как функ-ции от 
 яр-ко-сти опре-де-лен-ной окрест-но-сти пик-
 се-ля. Зная
  []
 
-[21<./images/noises/blur_big.jpg>]
-Overfull \hbox (11.61862pt too wide) in paragraph at lines 656--658
+[20<./images/noises/blur_big.jpg>]
+Overfull \hbox (11.61862pt too wide) in paragraph at lines 649--651
 []\TU/TimesNewRoman(0)/m/n/14.4 Функ-ция, осу-ществ-ля-ю-щ
 ая про-це-ду-ру сов-ме-ще-ния, при-ни-ма-ет на 
 вход
  []
 
 
-Overfull \hbox (6.15596pt too wide) in paragraph at lines 656--658
+Overfull \hbox (6.15596pt too wide) in paragraph at lines 649--651
 \TU/TimesNewRoman(0)/m/n/14.4 два изоб-ра-же-ния и тип ис-
 поль-зу-е-мо-го де-скрип-то-ра. Ис-поль-зу-ют-
 ся де-скрип-
@@ -1519,157 +1516,157 @@ Overfull \hbox (6.15596pt too wide) in paragraph at lines 656--658
 
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
-) [22]
-Overfull \hbox (3.23618pt too wide) in paragraph at lines 695--697
+) [21]
+Overfull \hbox (3.23618pt too wide) in paragraph at lines 688--690
 []\TU/TimesNewRoman(0)/m/n/14.4 По-сле на-хож-де-ния сов-п
 ав-ших то-чек, по их на-бо-рам для каж-до-го и
 зоб-
  []
 
-[23] [24]
+[22] [23]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 28.79999pt
-(hyperref)                replaced by space on input line 715.
+(hyperref)                replaced by space on input line 708.
 
-[25] [26]
-<images/samples/blur_matches.jpg, id=288, 578.16pt x 578.16pt>
+[24] [25]
+<images/samples/blur_matches.jpg, id=287, 578.16pt x 578.16pt>
 File: images/samples/blur_matches.jpg Graphic file (type jpg)
 <use images/samples/blur_matches.jpg>
-Package luatex.def Info: images/samples/blur_matches.jpg  used on input line 733
+Package luatex.def Info: images/samples/blur_matches.jpg  used on input line 726
 .
 (luatex.def)             Requested size: 295.90588pt x 295.8987pt.
-<images/samples/blur_result.jpg, id=289, 385.44pt x 578.16pt>
+<images/samples/blur_result.jpg, id=288, 385.44pt x 578.16pt>
 File: images/samples/blur_result.jpg Graphic file (type jpg)
 <use images/samples/blur_result.jpg>
-Package luatex.def Info: images/samples/blur_result.jpg  used on input line 740.
+Package luatex.def Info: images/samples/blur_result.jpg  used on input line 733.
 
 (luatex.def)             Requested size: 204.85846pt x 307.28789pt.
- [27<./images/samples/blur_matches.jpg><./images/samples/blur_result.jpg>] [28]
-<images/ex1/Rand_noises_matches.png, id=301, 462.528pt x 346.896pt>
+ [26<./images/samples/blur_matches.jpg><./images/samples/blur_result.jpg>] [27]
+<images/ex1/Rand_noises_matches.png, id=300, 462.528pt x 346.896pt>
 File: images/ex1/Rand_noises_matches.png Graphic file (type png)
 <use images/ex1/Rand_noises_matches.png>
 Package luatex.def Info: images/ex1/Rand_noises_matches.png  used on input line 
-800.
+793.
 (luatex.def)             Requested size: 341.43307pt x 256.08499pt.
-<images/ex1/Rand_noises_displacement.png, id=302, 462.528pt x 346.896pt>
+<images/ex1/Rand_noises_displacement.png, id=301, 462.528pt x 346.896pt>
 File: images/ex1/Rand_noises_displacement.png Graphic file (type png)
 <use images/ex1/Rand_noises_displacement.png>
 Package luatex.def Info: images/ex1/Rand_noises_displacement.png  used on input 
-line 801.
+line 794.
 (luatex.def)             Requested size: 341.43307pt x 256.08499pt.
- [29] [30<./images/ex1/Rand_noises_matches.png><./images/ex1/Rand_noises_displac
+ [28] [29<./images/ex1/Rand_noises_matches.png><./images/ex1/Rand_noises_displac
 ement.png>]
-Overfull \hbox (34.69981pt too wide) in paragraph at lines 807--808
+Overfull \hbox (34.69981pt too wide) in paragraph at lines 800--801
 []\TU/TimesNewRoman(0)/m/n/14.4 При ис-поль-зо-ва-нии слу-
 чай-ных шу-мов экс-пе-ри-мент про-из-во-дил-с
 я несколь-
  []
 
-<images/ex2/gauss/Rand_noises_matches.png, id=318, 462.528pt x 346.896pt>
+<images/ex2/gauss/Rand_noises_matches.png, id=317, 462.528pt x 346.896pt>
 File: images/ex2/gauss/Rand_noises_matches.png Graphic file (type png)
 <use images/ex2/gauss/Rand_noises_matches.png>
 Package luatex.def Info: images/ex2/gauss/Rand_noises_matches.png  used on input
- line 815.
+ line 808.
 (luatex.def)             Requested size: 341.43307pt x 256.08499pt.
-<images/ex2/gauss/Rand_noises_displacement.png, id=319, 462.528pt x 346.896pt>
+<images/ex2/gauss/Rand_noises_displacement.png, id=318, 462.528pt x 346.896pt>
 File: images/ex2/gauss/Rand_noises_displacement.png Graphic file (type png)
 <use images/ex2/gauss/Rand_noises_displacement.png>
 Package luatex.def Info: images/ex2/gauss/Rand_noises_displacement.png  used on 
-input line 816.
+input line 809.
 (luatex.def)             Requested size: 341.43307pt x 256.08499pt.
-[31]
-<images/ex2/sp/Rand_noises_matches.png, id=328, 462.528pt x 346.896pt>
+[30]
+<images/ex2/sp/Rand_noises_matches.png, id=327, 462.528pt x 346.896pt>
 File: images/ex2/sp/Rand_noises_matches.png Graphic file (type png)
 <use images/ex2/sp/Rand_noises_matches.png>
 Package luatex.def Info: images/ex2/sp/Rand_noises_matches.png  used on input li
-ne 823.
+ne 816.
 (luatex.def)             Requested size: 341.43307pt x 256.08499pt.
-<images/ex2/sp/Rand_noises_displacement.png, id=329, 462.528pt x 346.896pt>
+<images/ex2/sp/Rand_noises_displacement.png, id=328, 462.528pt x 346.896pt>
 File: images/ex2/sp/Rand_noises_displacement.png Graphic file (type png)
 <use images/ex2/sp/Rand_noises_displacement.png>
 Package luatex.def Info: images/ex2/sp/Rand_noises_displacement.png  used on inp
-ut line 824.
+ut line 817.
 (luatex.def)             Requested size: 341.43307pt x 256.08499pt.
- [32<./images/ex2/gauss/Rand_noises_matches.png><./images/ex2/gauss/Rand_noises_
-displacement.png>] [33<./images/ex2/sp/Rand_noises_matches.png><./images/ex2/sp/
+ [31<./images/ex2/gauss/Rand_noises_matches.png><./images/ex2/gauss/Rand_noises_
+displacement.png>] [32<./images/ex2/sp/Rand_noises_matches.png><./images/ex2/sp/
 Rand_noises_displacement.png>]
-Overfull \hbox (2.3432pt too wide) in paragraph at lines 838--839
+Overfull \hbox (2.3432pt too wide) in paragraph at lines 831--832
 []\TU/TimesNewRoman(0)/m/n/14.4 При раз-мы-тии изоб-ра-же-
 ния де-скрип-тор ORB рань-ше дру-гих рас-смот-
  []
 
-<images/ex1/Rand_noises_d_by_m.png, id=344, 462.528pt x 346.896pt>
+<images/ex1/Rand_noises_d_by_m.png, id=342, 462.528pt x 346.896pt>
 File: images/ex1/Rand_noises_d_by_m.png Graphic file (type png)
 <use images/ex1/Rand_noises_d_by_m.png>
 Package luatex.def Info: images/ex1/Rand_noises_d_by_m.png  used on input line 8
-46.
+39.
 (luatex.def)             Requested size: 341.43307pt x 256.08499pt.
-[34]
-<images/fails/result.jpg, id=352, 385.44pt x 578.16pt>
+[33]
+<images/fails/result.jpg, id=351, 385.44pt x 578.16pt>
 File: images/fails/result.jpg Graphic file (type jpg)
 <use images/fails/result.jpg>
-Package luatex.def Info: images/fails/result.jpg  used on input line 855.
+Package luatex.def Info: images/fails/result.jpg  used on input line 848.
 (luatex.def)             Requested size: 204.85846pt x 307.28789pt.
- [35<./images/ex1/Rand_noises_d_by_m.png>]
-<images/ex2/gauss/Rand_noises_displacement_big.png, id=362, 462.528pt x 346.896p
+ [34<./images/ex1/Rand_noises_d_by_m.png>]
+<images/ex2/gauss/Rand_noises_displacement_big.png, id=361, 462.528pt x 346.896p
 t>
 File: images/ex2/gauss/Rand_noises_displacement_big.png Graphic file (type png)
 <use images/ex2/gauss/Rand_noises_displacement_big.png>
 Package luatex.def Info: images/ex2/gauss/Rand_noises_displacement_big.png  used
- on input line 864.
+ on input line 857.
 (luatex.def)             Requested size: 273.14923pt x 204.87329pt.
-<images/ex2/sp/Rand_noises_displacement_big.png, id=363, 462.528pt x 346.896pt>
+<images/ex2/sp/Rand_noises_displacement_big.png, id=362, 462.528pt x 346.896pt>
 File: images/ex2/sp/Rand_noises_displacement_big.png Graphic file (type png)
 <use images/ex2/sp/Rand_noises_displacement_big.png>
 Package luatex.def Info: images/ex2/sp/Rand_noises_displacement_big.png  used on
- input line 871.
+ input line 864.
 (luatex.def)             Requested size: 273.14923pt x 204.87329pt.
- [36<./images/fails/result.jpg><./images/ex2/gauss/Rand_noises_displacement_big.
+ [35<./images/fails/result.jpg><./images/ex2/gauss/Rand_noises_displacement_big.
 png>]
-<images/ex2/gauss/Rand_noises_d_by_m.png, id=372, 462.528pt x 346.896pt>
+<images/ex2/gauss/Rand_noises_d_by_m.png, id=371, 462.528pt x 346.896pt>
 File: images/ex2/gauss/Rand_noises_d_by_m.png Graphic file (type png)
 <use images/ex2/gauss/Rand_noises_d_by_m.png>
 Package luatex.def Info: images/ex2/gauss/Rand_noises_d_by_m.png  used on input 
-line 880.
+line 873.
 (luatex.def)             Requested size: 273.14923pt x 204.87329pt.
-<images/ex2/sp/Rand_noises_d_by_m.png, id=373, 462.528pt x 346.896pt>
+<images/ex2/sp/Rand_noises_d_by_m.png, id=372, 462.528pt x 346.896pt>
 File: images/ex2/sp/Rand_noises_d_by_m.png Graphic file (type png)
 <use images/ex2/sp/Rand_noises_d_by_m.png>
 Package luatex.def Info: images/ex2/sp/Rand_noises_d_by_m.png  used on input lin
-e 887.
+e 880.
 (luatex.def)             Requested size: 273.14923pt x 204.87329pt.
- [37<./images/ex2/sp/Rand_noises_displacement_big.png><./images/ex2/gauss/Rand_n
+ [36<./images/ex2/sp/Rand_noises_displacement_big.png><./images/ex2/gauss/Rand_n
 oises_d_by_m.png>]
-Overfull \hbox (0.94116pt too wide) in paragraph at lines 898--902
+Overfull \hbox (0.94116pt too wide) in paragraph at lines 891--895
 \TU/TimesNewRoman(0)/m/n/14.4 но-сти. Ху-же все-го в про-в
 е-ден-ных экс-пе-ри-мен-тах от-ра-бо-тал ал-г
 о-ритм ORB,
  []
 
-[38<./images/ex2/sp/Rand_noises_d_by_m.png>] [39] [40]
-Overfull \hbox (0.19089pt too wide) in paragraph at lines 944--945
+[37<./images/ex2/sp/Rand_noises_d_by_m.png>] [38] [39]
+Overfull \hbox (0.19089pt too wide) in paragraph at lines 937--938
 \TU/TimesNewRoman(0)/m/n/14.4 formance Comparison for Distorted Images [Эле
 к-трон-ный ре-сурс] / E. Karami,
  []
 
-[41]
-Overfull \hbox (17.78358pt too wide) in paragraph at lines 949--950
+[40]
+Overfull \hbox (17.78358pt too wide) in paragraph at lines 942--943
 []\TU/TimesNewRoman(0)/m/n/14.4 Deng, G. An adaptive Gaussian filter for noise 
 reduction and edge detection
  []
 
-[42] (./src/stitching.py [43] [44] [45] [46] [47] [48] [49] [50] [51] [52]
-[53] [54] [55] [56] [57] [58] [59] [60] [61]) [62]
+[41] (./src/stitching.py [42] [43] [44] [45] [46] [47] [48] [49] [50] [51]
+[52] [53] [54] [55] [56] [57] [58] [59] [60]) [61]
 
 AED: lastpage setting LastPage
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 972.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 972.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 965.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 965.
 (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 972.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 972.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 965.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 965.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 3C11E1E7B05EF1C266EF5E55366E433B;4135.
+(rerunfilecheck)             Checksum: 21FFFF32CAC832485D281F4EA08EA2F9;3911.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1677,18 +1674,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 )
 (\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 935 ({)
+### simple group (level 1) entered at line 928 ({)
 ### bottom level
 
 Here is how much of LuaTeX's memory you used:
- 31486 strings out of 493864
- 305232,953878 words of node,token memory allocated
+ 31487 strings out of 493864
+ 305240,953878 words of node,token memory allocated
  691 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 1 dir, 2 glue, 4 kern, 1 glyph, 48 attribute, 64 gl
 ue_spec, 26 attribute_list, 2 write, 1 pdf_action nodes
-   avail lists: 1:3,2:12868,3:261,4:1029,5:5978,6:125,7:12990,8:44,9:10869,10:33
+   avail lists: 1:5,2:12868,3:259,4:1029,5:5978,6:127,7:12989,8:44,9:10869,10:33
 ,11:502
- 34167 multiletter control sequences out of 65536+600000
+ 34168 multiletter control sequences out of 65536+600000
  71 fonts using 11055359 bytes
  52i,15n,92p,1370b,1037s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf></usr/share
@@ -1700,10 +1697,10 @@ ist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1
 s/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
 /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (60 pages, 2963494 bytes).
+Output written on thesis.pdf (59 pages, 2959320 bytes).
 
-PDF statistics: 1353 PDF objects out of 1440 (max. 8388607)
- 1218 compressed objects within 13 object streams
+PDF statistics: 1351 PDF objects out of 1440 (max. 8388607)
+ 1217 compressed objects within 13 object streams
  914 named destinations out of 1000 (max. 131072)
  105 words of extra memory for PDF output out of 10000 (max. 100000000)
 
