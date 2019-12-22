@@ -6,10 +6,6 @@
 \contentsline {section}{\numberline {2}Разработка алгоритма построения дескрипторов изображений}{9}{section.2}% 
 \contentsline {subsection}{\numberline {2.1}Алгоритм построения дескрипторов}{9}{subsection.2.1}% 
 \contentsline {subsection}{\numberline {2.2}Программная реализация}{12}{subsection.2.2}% 
-\contentsline {subsection}{3.2\hskip 2em\relax Экспериментальная оценка влияния цифровых шумов на качество работы алгоритма}{14}{lstnumber.-4.3}% 
-\contentsline {subsubsection}{\numberline {2.2.1} Сравнение работы алгоритмов при применении размытия }{15}{subsubsection.2.2.1}% 
-\contentsline {subsubsection}{\numberline {2.2.2} Сравнение работы алгоритмов при применении случайных шумов }{20}{subsubsection.2.2.2}% 
-\contentsline {section}{\numberline {3}Анализ полученных результатов}{23}{section.3}% 
-\contentsline {section}{Заключение}{29}{section*.16}% 
-\contentsline {section}{Список использованных источников}{30}{section*.17}% 
-\contentsline {section}{Приложение А Код программы}{32}{section*.18}% 
+\contentsline {section}{Заключение}{14}{section*.4}% 
+\contentsline {section}{Список использованных источников}{15}{section*.5}% 
+\contentsline {section}{Приложение А Код программы}{17}{section*.6}% 
