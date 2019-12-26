@@ -5,7 +5,6 @@
 \contentsline {subsection}{\numberline {1.2}Существующие алгоритмы построения дескрипторов}{8}{subsection.1.2}% 
 \contentsline {section}{\numberline {2}Разработка алгоритма построения дескрипторов изображений}{9}{section.2}% 
 \contentsline {subsection}{\numberline {2.1}Алгоритм построения дескрипторов}{9}{subsection.2.1}% 
-\contentsline {subsection}{\numberline {2.2}Программная реализация}{12}{subsection.2.2}% 
-\contentsline {section}{Заключение}{14}{section*.4}% 
-\contentsline {section}{Список использованных источников}{15}{section*.5}% 
-\contentsline {section}{Приложение А Код программы}{17}{section*.6}% 
+\contentsline {section}{Заключение}{13}{section*.6}% 
+\contentsline {section}{Список использованных источников}{14}{section*.7}% 
+\contentsline {section}{Приложение А Код программы}{15}{section*.8}% 

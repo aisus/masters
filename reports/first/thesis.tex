@@ -364,7 +364,8 @@ showstringspaces=false,
 	
 	Напротив, в задачах плотного сопоставления изображений, возникающих в фотограмметрии и построении карт глубины, требуется вычисление дескриптора для каждого пикселя, что накладывает дополнительные ограничения на вычислительную сложность. При этом точностью построения и идентификации возможно в некоторой степени пренебречь, т.к. в данных задачах дескрипторы применяются для оценки общих тенденций преобразований между изображениями, что позволяет за счет их большого количества добиться хороших результатов усреднением и дополнительной валидацией.
 	
-	SIFT, SURF, ORB. Все сосут, ибо тяжелые, хороши для фичей, плохи для dense. Отъебитесь от меня пожалуйста, спасибо.
+	TODO: краткое описание SIFT, SURF без уклона в детектор, только дескрипторы.
+	Сравнение, почему DAISY эффективнее.
 }
 
 \newpage
@@ -380,7 +381,23 @@ showstringspaces=false,
 		
 		Для построения градиента используются стандартные фильтры, например, оператор Собеля. 
 		
+		\begin{figure}[H]
+			\centering                             
+			\includegraphics[width=0.49\textwidth,keepaspectratio]{daisy/bike_source.png}   
+			\includegraphics[width=0.49\textwidth,keepaspectratio]{daisy/bike_gradient.png}       
+			\centering\caption{ Пример построения градиента изображения }
+			\label{gradient_example}                           
+		\end{figure}    
+		
 		Построенные карты градиентов подвергаются последовательному размытию с постепенным увеличением ядра гауссовского фильтра. Полученные карты называются свернутыми картами направлений (Convolved Orientation Maps, COM).
+		
+		\begin{figure}[H]
+			\centering                             
+			\includegraphics[width=0.49\textwidth,keepaspectratio]{daisy/bike_gradient_COM_1.png}   
+			\includegraphics[width=0.49\textwidth,keepaspectratio]{daisy/bike_gradient_COM_2.png}       
+			\centering\caption{ Пример COM с различными степенями размытия }
+			\label{gradient_example}                           
+		\end{figure}    
 		
 		Вычисление COM для изображения $I$ производится следующим образом:
 		
@@ -434,71 +451,76 @@ showstringspaces=false,
 			& $j$ при числе направлений $T$.
 		\end{tabular}\\
 		
-		При необходимости может производиться нормализация вектора значений дескриптора одним из следующих способов. Петух, вернись и допиши, каких именно.
+		При необходимости может производиться нормализация вектора значений дескриптора одним из следующих способов:
+			\begin{enumerate}
+				\item Нормализация отдельных векторов $h_\sigma(u,v)$;
+				\item Полная нормализация вектора $D(u_0,v_0)$;
+				\item Метод нормализации, применяемый в SIFT. После полной нормализации $D(u_0,v_0)$ вектор приводится к единичной сумме.
+			\end{enumerate}
 	
 	}
 	\newpage
-   	\subsection{Программная реализация}{
-   		
-   		Алгоритм сшивки изображений для исследования был реализован на языке Python 3.7 с использованием библиотеки OpenCV 3.4.2. 
-   		
-   		Функция, осуществляющая процедуру совмещения, принимает на вход два изображения и тип используемого дескриптора. 
-   		Используются дескрипторы SIFT, SURF, ORB, BRIEF. Заметим, что алгоритмы SIFT и SURF являются патентованными, и не присутствуют в стандартной библиотеке OpenCV из-за лицензионных ограничений. Данные алгоритмы доступны в пакете xfeatures2d при использовании версии библиотеки, включающей неофициальные алгоритмы, opencv-contrib. Использование данных алгоритмов разрешается только в некоммерческих целях [\ref{cv docs}]. 
-   		
-   		Для вычисления дескрипторов производится преобразование исходных изображений в градации серого.
-   		
-   		\begin{lstlisting}[frame=single,language=Python,mathescape=true] 
-   		# convert the image to grayscale
-   		gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-   		\end{lstlisting}
-   		
-   		Производится поиск наборов особых точек при помощи выбранного дескриптора.
-   	
-   		\begin{lstlisting}[frame=single,language=Python,mathescape=true] 
-   		# detect keypoints in the image
-   		detector = cv2.FeatureDetector_create("SIFT")
-   		kps = detector.detect(gray)
-   		
-   		# extract features from the image
-   		extractor = cv2.DescriptorExtractor_create("SIFT")
-   		(kps, features) = extractor.compute(gray, kps)
-   		\end{lstlisting}
-   		
-   		Найденные наборы проверяются на совпадение дескрипторов методом knn. Полученные совпадения дополнпительно тестируются на предмет нахождения расстояния между точками в заданных пределах. Пары, прошедшие тест, используются для вычисления преобразования.
-   		
-   		\begin{lstlisting}[frame=single,language=Python,mathescape=true] 
-   		# compute the raw matches and initialize the list of actual
-   		# matches
-   		matcher = cv2.DescriptorMatcher_create("BruteForce")
-   		rawMatches = matcher.knnMatch(featuresA, featuresB, 2)
-   		matches = []
-   		
-   		# loop over the raw matches
-   		for m in rawMatches:
-   		# ensure the distance is within a certain ratio of each
-   		# other (i.e. Lowe's ratio test)
-   		if len(m) == 2 and m[0].distance < m[1].distance * ratio:
-   		matches.append((m[0].trainIdx, m[0].queryIdx))
-   		\end{lstlisting}
-   		
-   		После нахождения совпавших точек, по их наборам для каждого изображения вычисляется матрица проективного преобразования.
-   		Если совпавших опорных точек найдено меньше, чем четыре, проективное преобразование не может быть вычислено, и функция возвращает статус ошибки.
-   		
-   		\begin{lstlisting}[frame=single,language=Python,mathescape=true]
-   		 # compute the homography between the two sets of points
-   		(H, status) = cv2.findHomography(ptsA, ptsB, cv2.RANSAC,
-   		reprojThresh)
-   		\end{lstlisting}
-   		
-   		Построенная матрица проективного преобразования применяется ко второму входному изображению, трансформируя его до совпадения положений опорных точек.
-   		
-   		Исходное первое изображение и преобразованное второе записываются в одно результирующее. В зависимости от требуемых параметров, сложение может производиться с различными значениями альфа-канала, в том числе с выделением яркостью пересекающейся области либо одного из изображений в целях повышения наглядности.
-   		
-   		Функция возвращает результирующее изображение и отчет о работе алгоритма, включающий время выполнения и построенную матрицу проективного преобразования.
-   		
-   		Полный код функции представлен в приложении А.
-   	}
-\newpage
+%   	\subsection{Программная реализация}{
+%   		
+%   		Алгоритм сшивки изображений для исследования был реализован на языке Python 3.7 с использованием библиотеки OpenCV 3.4.2. 
+%   		
+%   		Функция, осуществляющая процедуру совмещения, принимает на вход два изображения и тип используемого дескриптора. 
+%   		Используются дескрипторы SIFT, SURF, ORB, BRIEF. Заметим, что алгоритмы SIFT и SURF являются патентованными, и не присутствуют в стандартной библиотеке OpenCV из-за лицензионных ограничений. Данные алгоритмы доступны в пакете xfeatures2d при использовании версии библиотеки, включающей неофициальные алгоритмы, opencv-contrib. Использование данных алгоритмов разрешается только в некоммерческих целях [\ref{cv docs}]. 
+%   		
+%   		Для вычисления дескрипторов производится преобразование исходных изображений в градации серого.
+%   		
+%   		\begin{lstlisting}[frame=single,language=Python,mathescape=true] 
+%   		# convert the image to grayscale
+%   		gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+%   		\end{lstlisting}
+%   		
+%   		Производится поиск наборов особых точек при помощи выбранного дескриптора.
+%   	
+%   		\begin{lstlisting}[frame=single,language=Python,mathescape=true] 
+%   		# detect keypoints in the image
+%   		detector = cv2.FeatureDetector_create("SIFT")
+%   		kps = detector.detect(gray)
+%   		
+%   		# extract features from the image
+%   		extractor = cv2.DescriptorExtractor_create("SIFT")
+%   		(kps, features) = extractor.compute(gray, kps)
+%   		\end{lstlisting}
+%   		
+%   		Найденные наборы проверяются на совпадение дескрипторов методом knn. Полученные совпадения дополнпительно тестируются на предмет нахождения расстояния между точками в заданных пределах. Пары, прошедшие тест, используются для вычисления преобразования.
+%   		
+%   		\begin{lstlisting}[frame=single,language=Python,mathescape=true] 
+%   		# compute the raw matches and initialize the list of actual
+%   		# matches
+%   		matcher = cv2.DescriptorMatcher_create("BruteForce")
+%   		rawMatches = matcher.knnMatch(featuresA, featuresB, 2)
+%   		matches = []
+%   		
+%   		# loop over the raw matches
+%   		for m in rawMatches:
+%   		# ensure the distance is within a certain ratio of each
+%   		# other (i.e. Lowe's ratio test)
+%   		if len(m) == 2 and m[0].distance < m[1].distance * ratio:
+%   		matches.append((m[0].trainIdx, m[0].queryIdx))
+%   		\end{lstlisting}
+%   		
+%   		После нахождения совпавших точек, по их наборам для каждого изображения вычисляется матрица проективного преобразования.
+%   		Если совпавших опорных точек найдено меньше, чем четыре, проективное преобразование не может быть вычислено, и функция возвращает статус ошибки.
+%   		
+%   		\begin{lstlisting}[frame=single,language=Python,mathescape=true]
+%   		 # compute the homography between the two sets of points
+%   		(H, status) = cv2.findHomography(ptsA, ptsB, cv2.RANSAC,
+%   		reprojThresh)
+%   		\end{lstlisting}
+%   		
+%   		Построенная матрица проективного преобразования применяется ко второму входному изображению, трансформируя его до совпадения положений опорных точек.
+%   		
+%   		Исходное первое изображение и преобразованное второе записываются в одно результирующее. В зависимости от требуемых параметров, сложение может производиться с различными значениями альфа-канала, в том числе с выделением яркостью пересекающейся области либо одного из изображений в целях повышения наглядности.
+%   		
+%   		Функция возвращает результирующее изображение и отчет о работе алгоритма, включающий время выполнения и построенную матрицу проективного преобразования.
+%   		
+%   		Полный код функции представлен в приложении А.
+%   	}
+%\newpage
 
 
 %------------------------------------------------
@@ -513,7 +535,9 @@ showstringspaces=false,
 \addcontentsline{toc}{section}{Заключение}
 \section*{Заключение}
 {
-    В ходе данной работы был сделан мем.
+    В ходе данной работы была собрана и проанализирована информация о существующих методах построения дескрипторов изображений. На основе существующего алгоритма DAISY был разработан алгоритм, потенциально обладающий высокой степенью устойчивости к пространственным преобразованиям исходного изображения.
+    Разработанный алгоритм обладает набором параметров, позволяющих достаточно свободно варьировать точность и вычислительную сложность построения без изменения исходного кода, что позволяет эффективно адаптировать алгоритм к конкретным задачам. 
+    Построенные дескрипторы можно использовать как в задачах распознавания, так и в задачах плотного сопоставления изображений. 
 }
 
 \newpage
@@ -530,15 +554,15 @@ showstringspaces=false,
 	\item{Lowe, D. G. Distinctive image features from scale-invariant keypoints [Текст] / D. G. Lowe // International journal of computer vision. -- 2004. -- Vol. 60. -- I. 2. -- P. 91-110.}\label{lowe surf}
 %	\item{Кудрина М. А., Мурзин А. В. Аффинные преобразования объектов в компьютерной графике // НиКа. 2014. №. URL: \\https://cyberleninka.ru/article/n/affinnye-preobrazovaniya-obektov-v-kompyuternoy-grafike (дата обращения: 25.12.2018). }
 	\item{Rublee, E. ORB: an efficient alternative to SIFT or SURF [Текст] / E. Rublee, D. Brando, J. Joestar // ICCV '11 Proceedings of the 2011 International Conference on Computer Vision. -- IEEE Computer Society Washington, DC, USA, 2011. -- P. 2564-2571. }\label{rublee orb}
-	\item{Проективное преобразование [Электронный ресурс] // Википедия : свободная энцикл. -- Электрон. дан. -- 2019. -- URL: \\https://ru.wikipedia.org/?oldid=99107559 (дата обращения: 15.04.2019).}\label{wiki projective}
-	\item{Аффинное преобразование [Электронный ресурс] // Википедия : свободная энцикл. -- Электрон. дан. -- 2019. -- URL: \\https://ru.wikipedia.org/?oldid=93707864 (дата обращения: 15.04.2019).}\label{wiki affine}
+%	\item{Проективное преобразование [Электронный ресурс] // Википедия : свободная энцикл. -- Электрон. дан. -- 2019. -- URL: \\https://ru.wikipedia.org/?oldid=99107559 (дата обращения: 15.04.2019).}\label{wiki projective}
+%	\item{Аффинное преобразование [Электронный ресурс] // Википедия : свободная энцикл. -- Электрон. дан. -- 2019. -- URL: \\https://ru.wikipedia.org/?oldid=93707864 (дата обращения: 15.04.2019).}\label{wiki affine}
 	\item {Karami, E. Image Matching Using SIFT, SURF, BRIEF and ORB: Per-\\formance Comparison for Distorted Images [Электронный ресурс] / E. Karami, S. Prasad, M. Shehata // arXiv preprint. -- 2015. -- Электрон. дан. -- URL:\\ https://arxiv.org/ftp/arxiv/papers/1710/1710.02726.pdf\quad (дата обращения:\\ 25.05.2019).}
 	\item{Kong, H. A generalized Laplacian of Gaussian filter for blob detection and its applications [Текст] / H. Kong, H. C. Akakin, S. E. Sarma // IEEE transactions on cybernetics. -- IEEE Computer Society Washington, DC, USA, 2013. -- V. 43. -- I. 6. -- P. 1719-1733.}{\label{imagematching paper}}
 %	\item{Бинарное изображение // Википедия. [2018—2018]. Дата обновления: 30.05.2018. URL: https://ru.wikipedia.org/?oldid=92976723 \\(дата обращения: 30.05.2018).}
-	\item{Moeslund, T. B. BLOB Analysis: An introduction to video and image processing [Текст] / T. B. Moeslund. -- Springer, London, 2012. -- 227 p. -- p. 5-20.}{\label{blobs}}
-	\item{Цифровой шум изображения  [Электронный ресурс] // Википедия : свободная энцикл. -- Электрон. дан. -- 2019. -- URL:\\ https://ru.wikipedia.org/?oldid=95235149 (дата обращения: 15.04.2019).}\label{wiki noise}
-	\item{Deng, G. An adaptive Gaussian filter for noise reduction and edge detection [Текст] / G. Deng, L. W. Cahill // IEEE Conference Record. -- IEEE Computer Society Washington, DC, USA, 1993. -- P. 1615-1619.}{\label{gaussian filter}}
-b 	\item{OpenCV Documentation [Электронный ресурс] : официальная документация библиотеки OpenCV. / Intel Corporation, Willow Garage Inc., Itseez Ltd. -- Электрон. дан. -- 2019. -- URL: \\https://docs.opencv.org (дата обращения: 25.04.2019). }{\label{cv docs}}
+%	\item{Moeslund, T. B. BLOB Analysis: An introduction to video and image processing [Текст] / T. B. Moeslund. -- Springer, London, 2012. -- 227 p. -- p. 5-20.}{\label{blobs}}
+%	\item{Цифровой шум изображения  [Электронный ресурс] // Википедия : свободная энцикл. -- Электрон. дан. -- 2019. -- URL:\\ https://ru.wikipedia.org/?oldid=95235149 (дата обращения: 15.04.2019).}\label{wiki noise}
+%	\item{Deng, G. An adaptive Gaussian filter for noise reduction and edge detection [Текст] / G. Deng, L. W. Cahill // IEEE Conference Record. -- IEEE Computer Society Washington, DC, USA, 1993. -- P. 1615-1619.}{\label{gaussian filter}}
+ 	\item{OpenCV Documentation [Электронный ресурс] : официальная документация библиотеки OpenCV. / Intel Corporation, Willow Garage Inc., Itseez Ltd. -- Электрон. дан. -- 2019. -- URL: \\https://docs.opencv.org (дата обращения: 25.04.2019). }{\label{cv docs}}
 \end{enumerate}
 
 
