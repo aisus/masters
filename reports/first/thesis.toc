@@ -2,9 +2,8 @@
 \contentsline {section}{Введение}{5}{section*.2}% 
 \contentsline {section}{\numberline {1}Исследование алгоритмов построения дескрипторов изображений}{6}{section.1}% 
 \contentsline {subsection}{\numberline {1.1}Постановка задачи}{6}{subsection.1.1}% 
-\contentsline {subsection}{\numberline {1.2}Существующие алгоритмы построения дескрипторов}{8}{subsection.1.2}% 
-\contentsline {section}{\numberline {2}Разработка алгоритма построения дескрипторов изображений}{9}{section.2}% 
-\contentsline {subsection}{\numberline {2.1}Алгоритм построения дескрипторов}{9}{subsection.2.1}% 
-\contentsline {section}{Заключение}{13}{section*.6}% 
-\contentsline {section}{Список использованных источников}{14}{section*.7}% 
-\contentsline {section}{Приложение А Код программы}{15}{section*.8}% 
+\contentsline {subsection}{\numberline {1.2}Существующие методы построения дескрипторов}{9}{subsection.1.2}% 
+\contentsline {section}{\numberline {2}Разработка алгоритма построения дескрипторов изображений}{10}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Алгоритм построения дескрипторов}{10}{subsection.2.1}% 
+\contentsline {section}{Заключение}{14}{section*.7}% 
+\contentsline {section}{Список использованных источников}{15}{section*.8}% 

@@ -355,17 +355,25 @@ showstringspaces=false,
 	   	\item Вычислительная сложность построения;
 	   	\item Информативность - достаточность данных дескриптора для дальнейшей идентификации и сравнения точек.
 	\end{enumerate} 
-
-	Существует значительное число реализаций алгоритмов построения дескрипторов. Рассмотрим наиболее популярные подходы.
-
-\subsection{Существующие алгоритмы построения дескрипторов}{
 	
 	Следует отметить разницу в требованиях к алгоритму построения дескрипторов в зависимости от предметной области применения. В случае использования дескрипторов для описания особых точек (features) необходима повышенная точность идентификации и инвариантность к преобразованиям, вычислительная сложность же не является самым важным критерием, т.к. число особых точек на изображении, как правило, на порядки меньше его размерности. 
 	
 	Напротив, в задачах плотного сопоставления изображений, возникающих в фотограмметрии и построении карт глубины, требуется вычисление дескриптора для каждого пикселя, что накладывает дополнительные ограничения на вычислительную сложность. При этом точностью построения и идентификации возможно в некоторой степени пренебречь, т.к. в данных задачах дескрипторы применяются для оценки общих тенденций преобразований между изображениями, что позволяет за счет их большого количества добиться хороших результатов усреднением и дополнительной валидацией.
 	
-	TODO: краткое описание SIFT, SURF без уклона в детектор, только дескрипторы.
-	Сравнение, почему DAISY эффективнее.
+	Существует значительное число реализаций алгоритмов построения дескрипторов. Далее будут рассмотрены некоторые популярные методы и их особенности.
+	
+\newpage
+\subsection{Существующие методы построения дескрипторов}{
+	
+	\begin{figure}[H]
+		\centering                             
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{daisy/SIFT.jpg}       
+		\centering\caption{ Построение дескриптора SIFT }
+		\label{gradient_example}                           
+	\end{figure}    
+	
+	Распространенным решением для построения дескрипторов является алгоритм SIFT. 
+	
 }
 
 \newpage
@@ -377,14 +385,14 @@ showstringspaces=false,
 		В качестве основы для разрабатываемого метода используется алгоритм DAISY.
 		В основе алгоритма лежит метод построения гистограмм направленных градиентов. 
 		
-		Гистограммой направленных градиентов называют набор направлений градиентов изображения, построенный в определенной области. Данная техника позволяет описать точку распределением интенсивности в ее окрестности.    
+		Гистограммой направленных градиентов называют набор направлений градиентов изображения, построенный в определенной области. Данная техника позволяет описать точку распределением интенсивности в ее окрестности.
 		
 		Для построения градиента используются стандартные фильтры, например, оператор Собеля. 
 		
 		\begin{figure}[H]
 			\centering                             
-			\includegraphics[width=0.49\textwidth,keepaspectratio]{daisy/bike_source.png}   
-			\includegraphics[width=0.49\textwidth,keepaspectratio]{daisy/bike_gradient.png}       
+			\includegraphics[width=0.495\textwidth,keepaspectratio]{daisy/bike_source.png}   
+			\includegraphics[width=0.495\textwidth,keepaspectratio]{daisy/bike_gradient.png}       
 			\centering\caption{ Пример построения градиента изображения }
 			\label{gradient_example}                           
 		\end{figure}    
@@ -393,8 +401,8 @@ showstringspaces=false,
 		
 		\begin{figure}[H]
 			\centering                             
-			\includegraphics[width=0.49\textwidth,keepaspectratio]{daisy/bike_gradient_COM_1.png}   
-			\includegraphics[width=0.49\textwidth,keepaspectratio]{daisy/bike_gradient_COM_2.png}       
+			\includegraphics[width=0.495\textwidth,keepaspectratio]{daisy/bike_gradient_COM_1.png}   
+			\includegraphics[width=0.495\textwidth,keepaspectratio]{daisy/bike_gradient_COM_2.png}       
 			\centering\caption{ Пример COM с различными степенями размытия }
 			\label{gradient_example}                           
 		\end{figure}    
@@ -427,7 +435,7 @@ showstringspaces=false,
 		
 	    Каждый круг на схеме соответствует одной области выборки значений COM в его центральной точке. COM строятся для $H$ отдельных направлений, получая таким образом $H$ значений в точке.
 		
-		Точки сэмплирования расположены $Q$ концентрическими кольцами вокруг центральной, для которой производится вычисление дескриптора, каждое кольцо задает $T \cdot H$ значений результата.
+		Точки выборки расположены $Q$ концентрическими кольцами вокруг центральной, для которой производится вычисление дескриптора, каждое кольцо задает $T \cdot H$ значений результата.
 		
 		Следовательно, общее число элементов дескриптора будет равно:
 		\begin{equation}\label{elements_count}
@@ -458,6 +466,9 @@ showstringspaces=false,
 				\item Метод нормализации, применяемый в SIFT. После полной нормализации $D(u_0,v_0)$ вектор приводится к единичной сумме.
 			\end{enumerate}
 	
+	
+		Как можно видеть, описанный алгоритм отличается достаточно низкой вычислительной сложностью и простотой программной реализации. Наиболее ресурсоемким этапом является построение диаграммы направленных градиентов и последовательное размытие COM. 
+		Данные операции хорошо поддаются распараллеливанию или оптимизации путем замены свертки с крупным ядром последовательными свертками с ядрами меньшего размера, и выполняются один раз для всего изображения. Конфигурация паттерна выборки и методы нормализации влияют на производительность в незначительной степени, и могут варьироваться в широких пределах без серьезного повышения вычислительной сложности. 
 	}
 	\newpage
 %   	\subsection{Программная реализация}{
@@ -552,17 +563,14 @@ showstringspaces=false,
 %	\item{Гонсалес Р., Вудс Р. Цифровая обработка изображений // М.: Техносфера. – 2005. – Т. 1072. – С. 2.}
 	\item{Bres, S. Detection of interest points for image indexation [Текст] / S. Bres, J. M. Jolion // International Conference on Advances in Visual Information Systems. -- Springer, Berlin, Heidelberg, 1999. -- P. 427-435.}{\label{interest points}}	
 	\item{Lowe, D. G. Distinctive image features from scale-invariant keypoints [Текст] / D. G. Lowe // International journal of computer vision. -- 2004. -- Vol. 60. -- I. 2. -- P. 91-110.}\label{lowe surf}
-%	\item{Кудрина М. А., Мурзин А. В. Аффинные преобразования объектов в компьютерной графике // НиКа. 2014. №. URL: \\https://cyberleninka.ru/article/n/affinnye-preobrazovaniya-obektov-v-kompyuternoy-grafike (дата обращения: 25.12.2018). }
+	\item{Tola, E. DAISY: A Fast Local Descriptor for Dense Matching [Текст] / E. Tola, V. Lepetit, P. Fua // IEEE Transactions on Pattern Analysis and Machine Intelligence. 2010. Vol. 32, num. 5  -- P. 815-830.}{\label{tola_paper}}	
 	\item{Rublee, E. ORB: an efficient alternative to SIFT or SURF [Текст] / E. Rublee, D. Brando, J. Joestar // ICCV '11 Proceedings of the 2011 International Conference on Computer Vision. -- IEEE Computer Society Washington, DC, USA, 2011. -- P. 2564-2571. }\label{rublee orb}
-%	\item{Проективное преобразование [Электронный ресурс] // Википедия : свободная энцикл. -- Электрон. дан. -- 2019. -- URL: \\https://ru.wikipedia.org/?oldid=99107559 (дата обращения: 15.04.2019).}\label{wiki projective}
-%	\item{Аффинное преобразование [Электронный ресурс] // Википедия : свободная энцикл. -- Электрон. дан. -- 2019. -- URL: \\https://ru.wikipedia.org/?oldid=93707864 (дата обращения: 15.04.2019).}\label{wiki affine}
-	\item {Karami, E. Image Matching Using SIFT, SURF, BRIEF and ORB: Per-\\formance Comparison for Distorted Images [Электронный ресурс] / E. Karami, S. Prasad, M. Shehata // arXiv preprint. -- 2015. -- Электрон. дан. -- URL:\\ https://arxiv.org/ftp/arxiv/papers/1710/1710.02726.pdf\quad (дата обращения:\\ 25.05.2019).}
 	\item{Kong, H. A generalized Laplacian of Gaussian filter for blob detection and its applications [Текст] / H. Kong, H. C. Akakin, S. E. Sarma // IEEE transactions on cybernetics. -- IEEE Computer Society Washington, DC, USA, 2013. -- V. 43. -- I. 6. -- P. 1719-1733.}{\label{imagematching paper}}
-%	\item{Бинарное изображение // Википедия. [2018—2018]. Дата обновления: 30.05.2018. URL: https://ru.wikipedia.org/?oldid=92976723 \\(дата обращения: 30.05.2018).}
-%	\item{Moeslund, T. B. BLOB Analysis: An introduction to video and image processing [Текст] / T. B. Moeslund. -- Springer, London, 2012. -- 227 p. -- p. 5-20.}{\label{blobs}}
-%	\item{Цифровой шум изображения  [Электронный ресурс] // Википедия : свободная энцикл. -- Электрон. дан. -- 2019. -- URL:\\ https://ru.wikipedia.org/?oldid=95235149 (дата обращения: 15.04.2019).}\label{wiki noise}
+	\item{Rekhil, M. A Survey on Image Feature Descriptors [Текст] / M. Rekhil, K. Sreekumar //  (IJCSIT) International Journal of Computer Science and Information Technologies, Vol. 5 (6) , 2014, -- P. 7668-7673.}{\label{imagematching paper}}
 %	\item{Deng, G. An adaptive Gaussian filter for noise reduction and edge detection [Текст] / G. Deng, L. W. Cahill // IEEE Conference Record. -- IEEE Computer Society Washington, DC, USA, 1993. -- P. 1615-1619.}{\label{gaussian filter}}
- 	\item{OpenCV Documentation [Электронный ресурс] : официальная документация библиотеки OpenCV. / Intel Corporation, Willow Garage Inc., Itseez Ltd. -- Электрон. дан. -- 2019. -- URL: \\https://docs.opencv.org (дата обращения: 25.04.2019). }{\label{cv docs}}
+ 	\item{OpenCV Documentation [Электронный ресурс] : официальная документация библиотеки OpenCV. / Intel Corporation, Willow Garage Inc., Itseez Ltd. -- Электрон. дан. -- 2019. -- URL: \\https://docs.opencv.org (дата обращения: 20.11.2019). }{\label{cv docs}}
+ 	\item{Scikit-image Documentation [Электронный ресурс] : официальная документация библиотеки scikit-image. / The scikit-image team. -- Электрон. дан. -- 2019. -- URL: \\https://scikit-image.org/docs/stable/ (дата обращения: 25.11.2019). }{\label{skimg docs}}
+%		\item {Karami, E. Image Matching Using SIFT, SURF, BRIEF and ORB: Per-\\formance Comparison for Distorted Images [Электронный ресурс] / E. Karami, S. Prasad, M. Shehata // arXiv preprint. -- 2015. -- Электрон. дан. -- URL:\\ https://arxiv.org/ftp/arxiv/papers/1710/1710.02726.pdf\quad (дата обращения:\\ 25.05.2019).}
 \end{enumerate}
 
 
@@ -571,17 +579,17 @@ showstringspaces=false,
 %--------------------------------
 \newpage
 \phantomsection
-\addcontentsline{toc}{section}{Приложение А Код программы}
+%\addcontentsline{toc}{section}{Приложение А Код программы}
 
-\section*{Приложение А}
-{
-	\begin{center}
-	\textbf{Код программы}
-	\end{center}
-%	Файл stitching.py:
-%	\lstinputlisting[language=python,mathescape=true]{./src/stitching.py}
-	\newpage
-	%\lstinputlisting[language=python,mathescape=true]{./src/test.py}
-}
+%\section*{Приложение А}
+%{
+%	\begin{center}
+%	\textbf{Код программы}
+%	\end{center}
+%%	Файл stitching.py:
+%%	\lstinputlisting[language=python,mathescape=true]{./src/stitching.py}
+%	\newpage
+%	%\lstinputlisting[language=python,mathescape=true]{./src/test.py}
+%}
 
 \end{document}
