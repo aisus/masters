@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (MiKTeX 2.9.7200 64-bit)  (format=lualatex 2019.12.21)  10 JAN 2020 09:46
+This is LuaTeX, Version 1.10.0 (MiKTeX 2.9.7200 64-bit)  (format=lualatex 2019.12.21)  10 JAN 2020 09:54
  restricted system commands enabled.
 **thesis.tex
 (./thesis.tex
@@ -48,7 +48,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 1.234 seconds
+luaotfload | main : initialization completed in 1.229 seconds
 
 ("C:/Users/Jane Doe/AppData/Local/Programs/MiKTeX 2.9/tex/latex/extsizes/extart
 icle.cls"
@@ -1558,13 +1558,25 @@ Overfull \hbox (0.3244pt too wide) in paragraph at lines 613--614
 /S1047320315002230 (да-та
  []
 
+
+Overfull \hbox (9.84062pt too wide) in paragraph at lines 615--616
+[]\TU/TimesNewRoman(0)/m/n/14.4 Tola, E. DAISY: An Efficient Dense Descriptor A
+pplied to Wide-Baseline
+ []
+
+
+Overfull \hbox (4.25616pt too wide) in paragraph at lines 615--616
+\TU/TimesNewRoman(0)/m/n/14.4 https://ieeexplore.ieee.org/document/4815264 (д
+а-та об-ра-ще-ния: 05.12.2019). 
+ []
+
 [19] 
 AED: lastpage setting LastPage
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 636.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 636.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 637.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 637.
 (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 636.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 636.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 637.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 637.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: BFBD4BF64126A975C9531C9F371CF4F1;2454.
 
@@ -1585,7 +1597,7 @@ LaTeX Warning: There were multiply-defined labels.
 ### bottom level
 
 Here is how much of LuaTeX's memory you used:
- 28724 strings out of 494300
+ 28725 strings out of 494300
  100000,794899 words of node,token memory allocated
  716 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 5 glue, 8 kern, 1 glyph, 21 attribute, 73 glue_spec
@@ -1604,9 +1616,9 @@ ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Jane
 <C:/Users/Jane Doe/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb><C:/Users/Jane Doe/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
 public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (17 pages, 861656 bytes).
+Output written on thesis.pdf (17 pages, 861993 bytes).
 
-PDF statistics: 223 PDF objects out of 1000 (max. 8388607)
- 61 named destinations out of 1000 (max. 131072)
+PDF statistics: 224 PDF objects out of 1000 (max. 8388607)
+ 62 named destinations out of 1000 (max. 131072)
  65 words of extra memory for PDF output out of 10000 (max. 100000000)
 
