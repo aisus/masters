@@ -365,14 +365,49 @@ showstringspaces=false,
 \newpage
 \subsection{Существующие методы построения дескрипторов}{
 	
+	\subsubsection{SIFT}{
+	Большинство существующих дескрипторов основаны на методах сбора информации о градиенте освещенности изображения в некоторой локальной окрестности точки. 
+	Распространенным решением для построения дескрипторов является алгоритм SIFT. 
+	
+	В методе SIFT дескриптором является вектор. Как и направление ключевой точки, дескриптор вычисляется на гауссиане, ближайшем по масштабу к ключевой точке, и исходя из градиентов в некотором окне ключевой точки. Перед вычислением дескриптора это окно поворачивают на угол направления ключевой точки, чем и достигается инвариантность относительно поворота.
+	
 	\begin{figure}[H]
 		\centering                             
-		\includegraphics[width=0.8\textwidth,keepaspectratio]{daisy/SIFT.jpg}       
+		\includegraphics[width=0.6\textwidth,keepaspectratio]{daisy/SIFT.jpg}       
 		\centering\caption{ Построение дескриптора SIFT }
 		\label{gradient_example}                           
 	\end{figure}    
 	
-	Распространенным решением для построения дескрипторов является алгоритм SIFT. 
+	Дескриптор точки состоит из всех полученных гистограмм в ее локальной окрестности. На практике используются дескрипторы размерности 128 компонент (4x4x8).
+	
+	Полученный дескриптор нормализуется, после чего все его компоненты, значение которых больше 0.2, урезаются до значения 0.2 и затем дескриптор нормализуется ещё раз. В таком виде дескрипторы готовы к использованию.
+	
+	Существует большое число модификаций SIFT, направленных на улучшение устойчивости к определенным преобразованиям. 
+	}
+	\subsubsection{SURF}{
+	Дескриптор SURF (Speeded up Robust Features) относится к числу тех дескрипторов, которые одновременно выполняют поиск особых точек и строят их описание, инвариантное к изменению масштаба и вращения. Кроме того, сам поиск ключевых точек обладает инвариантностью в том смысле, что повернутый объект сцены имеет тот же набор особых точек, что и образец.
+	
+	\begin{figure}[H]
+		\centering                             
+		\includegraphics[width=0.6\textwidth,keepaspectratio]{daisy/SURF.png}       
+		\centering\caption{ Построение дескриптора SURF }
+		\label{gradient_example}                           
+	\end{figure}    
+	
+	Определение особых точек на изображении выполняется на основании матрицы Гессе. Использование Гессиана обеспечивает инвариантность относительно преобразования типа "поворот", но не инвариантность относительно изменения масштаба. Поэтому SURF применяет фильтры разного масштаба для вычисления Гессиана. Для каждой найденной особой точки вычисляется ориентация – преобладающее направление перепада яркости. Понятие ориентации близко к понятию направления градиента, но для определения ориентации особой точки применяется фильтр Хаара. Дескриптор формируется в результате склеивания взвешенных описаний градиента для 16 квадрантов вокруг особой точки. Элементы дескриптора взвешиваются на коэффициенты Гауссова ядра. Веса необходимы для большей устойчивости к шумам в удаленных точках.
+	}
+
+	\subsubsection{GLOH}{
+	Дескриптор GLOH (Gradient location-orientation histogram) является модификацией SIFT-дескриптора, который построен с целью повышения надежности. Вычисляется SIFT дескриптор, но используется полярная сетка разбиения окрестности на бины: 3 радиальных блока с радиусами 6, 11 и 15 пикселей и 8 секторов. В результате получается вектор, содержащий 272 компоненты, который проецируется в пространство размерности 128 посредством использования анализа главных компонент (PCA).	
+	
+	\begin{figure}[H]
+		\centering                             
+		\includegraphics[width=0.6\textwidth,keepaspectratio]{daisy/GLOH.jpg}       
+		\centering\caption{ Построение дескриптора GLOH }
+		\label{gradient_example}                           
+	\end{figure} 
+
+	Общим для всех описанных алгоритмов является основанность на механизмах расчета локального градиента. Данный процесс, несмотря на высокую точность, может быть достаточно вычислительно сложным, что в особенности проявляется в задачах плотного сопоставления, где вычисления производятся для каждой точки изображения. Альтернативное решение используется в методе DAISY, выбранном в качестве основы алгоритма в данной работе. 
 	
 }
 
@@ -391,8 +426,8 @@ showstringspaces=false,
 		
 		\begin{figure}[H]
 			\centering                             
-			\includegraphics[width=0.495\textwidth,keepaspectratio]{daisy/bike_source.png}   
-			\includegraphics[width=0.495\textwidth,keepaspectratio]{daisy/bike_gradient.png}       
+			\includegraphics[width=0.55\textwidth,keepaspectratio]{daisy/bike_source.png}   
+			\includegraphics[width=0.55\textwidth,keepaspectratio]{daisy/bike_gradient.png}       
 			\centering\caption{ Пример построения градиента изображения }
 			\label{gradient_example}                           
 		\end{figure}    
@@ -401,8 +436,8 @@ showstringspaces=false,
 		
 		\begin{figure}[H]
 			\centering                             
-			\includegraphics[width=0.495\textwidth,keepaspectratio]{daisy/bike_gradient_COM_1.png}   
-			\includegraphics[width=0.495\textwidth,keepaspectratio]{daisy/bike_gradient_COM_2.png}       
+			\includegraphics[width=0.6\textwidth,keepaspectratio]{daisy/bike_gradient_COM_1.png}   
+			\includegraphics[width=0.6\textwidth,keepaspectratio]{daisy/bike_gradient_COM_2.png}       
 			\centering\caption{ Пример COM с различными степенями размытия }
 			\label{gradient_example}                           
 		\end{figure}    
@@ -467,7 +502,10 @@ showstringspaces=false,
 			\end{enumerate}
 	
 	
-		Как можно видеть, описанный алгоритм отличается достаточно низкой вычислительной сложностью и простотой программной реализации. Наиболее ресурсоемким этапом является построение диаграммы направленных градиентов и последовательное размытие COM. 
+		Как можно видеть, описанный алгоритм отличается достаточно низкой вычислительной сложностью и простотой программной реализации. 
+		
+		Наиболее ресурсоемким этапом является построение диаграммы направленных градиентов и последовательное размытие COM. 
+		
 		Данные операции хорошо поддаются распараллеливанию или оптимизации путем замены свертки с крупным ядром последовательными свертками с ядрами меньшего размера, и выполняются один раз для всего изображения. Конфигурация паттерна выборки и методы нормализации влияют на производительность в незначительной степени, и могут варьироваться в широких пределах без серьезного повышения вычислительной сложности. 
 	}
 	\newpage
@@ -566,11 +604,14 @@ showstringspaces=false,
 	\item{Tola, E. DAISY: A Fast Local Descriptor for Dense Matching [Текст] / E. Tola, V. Lepetit, P. Fua // IEEE Transactions on Pattern Analysis and Machine Intelligence. 2010. Vol. 32, num. 5  -- P. 815-830.}{\label{tola_paper}}	
 	\item{Rublee, E. ORB: an efficient alternative to SIFT or SURF [Текст] / E. Rublee, D. Brando, J. Joestar // ICCV '11 Proceedings of the 2011 International Conference on Computer Vision. -- IEEE Computer Society Washington, DC, USA, 2011. -- P. 2564-2571. }\label{rublee orb}
 	\item{Kong, H. A generalized Laplacian of Gaussian filter for blob detection and its applications [Текст] / H. Kong, H. C. Akakin, S. E. Sarma // IEEE transactions on cybernetics. -- IEEE Computer Society Washington, DC, USA, 2013. -- V. 43. -- I. 6. -- P. 1719-1733.}{\label{imagematching paper}}
-	\item{Rekhil, M. A Survey on Image Feature Descriptors [Текст] / M. Rekhil, K. Sreekumar //  (IJCSIT) International Journal of Computer Science and Information Technologies, Vol. 5 (6) , 2014, -- P. 7668-7673.}{\label{imagematching paper}}
-%	\item{Deng, G. An adaptive Gaussian filter for noise reduction and edge detection [Текст] / G. Deng, L. W. Cahill // IEEE Conference Record. -- IEEE Computer Society Washington, DC, USA, 1993. -- P. 1615-1619.}{\label{gaussian filter}}
+	\item{Rekhil, M. A Survey on Image Feature Descriptors [Текст] / M. Rekhil, K. Sreekumar //  (IJCSIT) International Journal of Computer Science and Information Technologies, Vol. 5 (6) , 2014, -- P. 7668-7673.}{\label{surveyon}}
+	\item{Funayama, R. Robust interest points detector and descriptor [Текст] / R. Funayama, H. Yanagihara //  Computer Vision and Image Understanding (CVIU), Vol. 110, No. 3 -- P. 346–359.}{\label{robust}}
+	\item{Panchal, P. A Comparison of SIFT and SURF [Текст] / R. Funayama, H. Yanagihara //  International Journal of Innovative Research in Computer and Communication Engineering Vol. 1, Issue 2, April 2013 -- P. 287–302.}{\label{comparison}}
+
  	\item{OpenCV Documentation [Электронный ресурс] : официальная документация библиотеки OpenCV. / Intel Corporation, Willow Garage Inc., Itseez Ltd. -- Электрон. дан. -- 2019. -- URL: \\https://docs.opencv.org (дата обращения: 20.11.2019). }{\label{cv docs}}
  	\item{Scikit-image Documentation [Электронный ресурс] : официальная документация библиотеки scikit-image. / The scikit-image team. -- Электрон. дан. -- 2019. -- URL: \\https://scikit-image.org/docs/stable/ (дата обращения: 25.11.2019). }{\label{skimg docs}}
-%		\item {Karami, E. Image Matching Using SIFT, SURF, BRIEF and ORB: Per-\\formance Comparison for Distorted Images [Электронный ресурс] / E. Karami, S. Prasad, M. Shehata // arXiv preprint. -- 2015. -- Электрон. дан. -- URL:\\ https://arxiv.org/ftp/arxiv/papers/1710/1710.02726.pdf\quad (дата обращения:\\ 25.05.2019).}
+	\item {Karami, E. Image Matching Using SIFT, SURF, BRIEF and ORB: Per-\\formance Comparison for Distorted Images [Электронный ресурс] / E. Karami, S. Prasad, M. Shehata // Journal of Visual Communication and Image Representation -- 2015. -- Электрон. дан. -- URL:\\ https://www.sciencedirect.com/science/article/pii/S1047320315002230\quad (дата обращения: 03.12.2019).}
+	\item {Xue, B. A DAISY descriptor based multi-view stereo method for large-scale scenes [Электронный ресурс] / B. Xue, L. Cao // Advances in Intelligent Systems and Computing -- 2015. -- Электрон. дан. -- URL:\\ https://doi.org/10.1016/j.jvcir.2015.11.007\quad (дата обращения: 06.12.2019).}
 \end{enumerate}
 
 
