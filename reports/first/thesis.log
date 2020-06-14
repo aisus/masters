@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (MiKTeX 2.9.7200 64-bit)  (format=lualatex 2019.12.21)  10 JAN 2020 10:10
+This is LuaTeX, Version 1.10.0 (MiKTeX 2.9.7200 64-bit)  (format=lualatex 2019.12.21)  14 JUN 2020 21:09
  restricted system commands enabled.
 **thesis.tex
 (./thesis.tex
@@ -48,7 +48,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 1.227 seconds
+luaotfload | main : initialization completed in 1.304 seconds
 
 ("C:/Users/Jane Doe/AppData/Local/Programs/MiKTeX 2.9/tex/latex/extsizes/extart
 icle.cls"
