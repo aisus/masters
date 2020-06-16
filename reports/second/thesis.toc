@@ -1,13 +1,13 @@
 \babel@toc {russian}{}
-\contentsline {section}{Введение}{5}{section*.2}% 
-\contentsline {section}{\numberline {1}Исследование алгоритмов построения дескрипторов изображений}{6}{section.1}% 
-\contentsline {subsection}{\numberline {1.1}Постановка задачи}{6}{subsection.1.1}% 
-\contentsline {subsection}{\numberline {1.2}Существующие методы построения дескрипторов}{9}{subsection.1.2}% 
-\contentsline {subsubsection}{\numberline {1.2.1}SIFT}{9}{subsubsection.1.2.1}% 
-\contentsline {subsubsection}{\numberline {1.2.2}SURF}{10}{subsubsection.1.2.2}% 
-\contentsline {subsubsection}{\numberline {1.2.3}GLOH}{11}{subsubsection.1.2.3}% 
-\contentsline {section}{\numberline {2}Разработка алгоритма построения дескрипторов изображений}{12}{section.2}% 
-\contentsline {subsection}{\numberline {2.1}Алгоритм построения дескрипторов}{12}{subsection.2.1}% 
-\contentsline {subsection}{\numberline {2.2}Программная реализация}{17}{subsection.2.2}% 
-\contentsline {section}{Заключение}{22}{section*.13}% 
-\contentsline {section}{Список использованных источников}{23}{section*.14}% 
+\contentsline {section}{Введение}{5}{section*.2}%
+\contentsline {section}{\numberline {1}Исследование алгоритмов построения дескрипторов изображений}{6}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Постановка задачи}{6}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Существующие методы построения дескрипторов}{9}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}SIFT}{9}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}SURF}{10}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}GLOH}{11}{subsubsection.1.2.3}%
+\contentsline {section}{\numberline {2}Разработка алгоритма построения дескрипторов изображений}{12}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Алгоритм построения дескрипторов}{12}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Программная реализация}{17}{subsection.2.2}%
+\contentsline {section}{Заключение}{22}{section*.13}%
+\contentsline {section}{Список использованных источников}{23}{section*.14}%
